@@ -9,7 +9,7 @@ Depends: R (>= 3.4.4)
 License: MIT
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1.9000
+RoxygenNote: 6.0.1
 Author: Nate Dwarshuis <natedwarshuis@gmail.com>
 Maintainer: Nate Dwarshuis <natedwarshuis@gmail.com>
 Built: R 3.4.4; ; 2018-05-03 00:36:21 UTC; unix
