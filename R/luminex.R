@@ -6,6 +6,7 @@
 #'
 #' @param filepath string for the file to import
 #' @return tidy tibble with columns for sample number, well, analyte, and concentration. Note that standard curves are ignored
+#' @export
 
 import_luminex <- function(filepath) {
     ## only need the 96 well data for each sheet (column a just has the
