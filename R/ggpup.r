@@ -17,7 +17,7 @@ ggpub <- function(filename, width, height, plot = ggplot2::last_plot(),
 
     ## update the geoms to something more sane
     gnames <- names(geoms)
-    old_defaults <- lapply(gnames, ggplot2::get_geom_defaults)
+    old_defaults <- lapply(gnames, get_geom_defaults)
     names(old_defaults) <- gnames 
     lapply(gnames, function(x) ggplot2::update_geom_defaults(x, geoms[[x]]))
 
