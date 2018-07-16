@@ -6,4 +6,5 @@
 
 geom_pub <- list("point" = list(size = 0.75),
                 "line" = list(size = 0.2),
-                "errorbar" = list(size = 0.2))
+                "errorbar" = list(size = 0.2),
+                "smooth" = list(size = 0.2))
