@@ -12,20 +12,20 @@
 #' @return NONE
 #' @export
 
-ggpub <- function(filename, width, height, plot = last_plot(),
+ggpub <- function(filename, width, height, plot = ggplot2::last_plot(),
                  geoms = geom_pub, theme = theme_pub) {
 
     ## update the geoms to something more sane
     gnames <- names(geoms)
-    old_defaults <- lapply(gnames, get_geom_defaults)
+    old_defaults <- lapply(gnames, ggplot2::get_geom_defaults)
     names(old_defaults) <- gnames 
-    lapply(gnames, function(x) update_geom_defaults(x, geoms[[x]]))
+    lapply(gnames, function(x) ggplot2::update_geom_defaults(x, geoms[[x]]))
 
     ## save the plot with the new theme
-    ggsave(paste(filename, ".pdf", sep = ""), plot = plot + theme,
+    ggplot2::ggsave(paste(filename, ".pdf", sep = ""), plot = plot + theme,
            units = "mm", width = width, height = height, dev="pdf")
 
     ## reset geoms
     gnames <- names(geoms)
-    invisible(lapply(gnames, function(x) update_geom_defaults(x, old_defaults[[x]])))
+    invisible(lapply(gnames, function(x) ggplot2::update_geom_defaults(x, old_defaults[[x]])))
 }
