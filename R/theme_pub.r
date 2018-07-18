@@ -5,7 +5,7 @@
 #' @export
 
 theme_pub <- ggplot2::theme_classic() +
-    ggplot2::theme(text = ggplot2::element_text(size = 7),
+    ggplot2::theme(text = ggplot2::element_text(size = 6),
           line = ggplot2::element_line(size = 0.2),
           axis.line = ggplot2::element_line(size = 0.2),
           legend.box.spacing = ggplot2::unit(0.2, "cm"),
