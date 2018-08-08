@@ -31,7 +31,7 @@ import_luminex <- function(filepath) {
     list_join <- function(x) {
         ## ghetto pattern matching
         if (length(x) == 1) {
-            x
+            x[[1]]
         } else if (length(x) == 2) {
             suppressMessages(dplyr::inner_join(x[[1]], x[[2]]))
         } else {
