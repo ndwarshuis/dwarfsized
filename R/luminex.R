@@ -30,7 +30,9 @@ import_luminex <- function(filepath) {
     ## this is when r should be haskell
     list_join <- function(x) {
         ## ghetto pattern matching
-        if (length(x) == 2) {
+        if (length(x) == 1) {
+            x
+        } else if (length(x) == 2) {
             suppressMessages(dplyr::inner_join(x[[1]], x[[2]]))
         } else {
             suppressMessages(dplyr::inner_join(x[[1]], list_join(x[-1])))
