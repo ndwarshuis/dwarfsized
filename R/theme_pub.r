@@ -12,5 +12,5 @@ theme_pub <- ggplot2::theme_classic() +
           legend.margin = ggplot2::margin(0.1, 0.1, 0.1, 0.1, "cm"),
           legend.key.size = ggplot2::unit(0.55, "lines"),
           legend.spacing = ggplot2::unit(0.15, "cm"),
-          strip.background = element_rect(linetype = "blank",
-                                          fill = "gray"))
+          strip.background = ggplot2::element_rect(linetype = "blank",
+                                                   fill = "gray"))
