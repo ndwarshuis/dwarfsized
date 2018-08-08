@@ -31,9 +31,9 @@ import_luminex <- function(filepath) {
     list_join <- function(x) {
         ## ghetto pattern matching
         if (length(x) == 2) {
-            suppressMessages(inner_join(x[[1]], x[[2]]))
+            suppressMessages(dplyr::inner_join(x[[1]], x[[2]]))
         } else {
-            suppressMessages(inner_join(x[[1]], list_join(x[-1])))
+            suppressMessages(dplyr::inner_join(x[[1]], list_join(x[-1])))
         }
     }
 
@@ -41,5 +41,7 @@ import_luminex <- function(filepath) {
         ## tidy the data
         gather(-1, -2, key = "cytokine", value = "conc") %>%
         ## no need for bead regions...spaces are evil
-        mutate(cytokine = str_replace(cytokine, "\\ \\(.*\\)", ""))
+        mutate(cytokine = str_replace(cytokine, "\\ \\(.*\\)", ""),
+               ## replace "-" with "_"
+               cytokine = str_replace(cytokine, "-", "_"))
 }
