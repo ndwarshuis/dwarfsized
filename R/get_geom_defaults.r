@@ -7,5 +7,5 @@
 #' @export
 
 get_geom_defaults <- function(geom) {
-    ggplot2:::find_subclass("Geom", geom, parent.frame())$default_aes
+    ggplot2:::check_subclass(geom, "Geom", env = parent.frame())$default_aes
 }
