@@ -5,6 +5,7 @@
 #' into one output. The input is expected to be a .xlsx file
 #'
 #' @param filepath string for the file to import
+#' @param range cell range for the data to be imported
 #' @return tidy tibble with columns for sample number, well, analyte, and concentration. Note that standard curves are ignored
 #' @export
 
