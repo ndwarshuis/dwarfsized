@@ -8,10 +8,10 @@
 #' @return tidy tibble with columns for sample number, well, analyte, and concentration. Note that standard curves are ignored
 #' @export
 
-import_luminex <- function(filepath) {
+import_luminex <- function(filepath, range = "B9:J89") {
     ## only need the 96 well data for each sheet (column a just has the
-    ## the analyte which is alreadyin the sheet name)
-    ldata <- read_excel_sheets(filepath, range = "B9:J89")
+    ## the analyte which is already in the sheet name)
+    ldata <- read_excel_sheets(filepath, range = range)
 
     ## function to remove the standard curve, the "X" in front of
     ## the sample number, rename the column to the analyte name,
